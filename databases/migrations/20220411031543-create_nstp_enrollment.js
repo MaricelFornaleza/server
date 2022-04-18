@@ -15,6 +15,7 @@ exports.up = async (Parse) => {
     .addPointer('applicationId', 'Application')
     .addBoolean('takenNstp1', { defaultValue: false })
     .addBoolean('takenNstp2', { defaultValue: false })
+    .addBoolean('isGraduated', { defaultValue: false })
     .addString('serialNumber');
 
   return schema.save();
