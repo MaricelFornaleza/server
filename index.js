@@ -66,9 +66,9 @@ const mountPath = process.env.PARSE_MOUNT || '/api';
 }
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/', function (req, res) {
-  res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
-});
+// app.get('/', function (req, res) {
+//   res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
+// });
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
