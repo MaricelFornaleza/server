@@ -1,3 +1,11 @@
+var admin = require('firebase-admin'); 
+
+var serviceAccount = require(__dirname + '/nsnoais-firebase-adminsdk-lfea3-7b05ec1c42.json')
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+})
+
 Parse.Cloud.define('hello', req => {
   req.log.info(req);
   return 'Hi';
@@ -68,4 +76,36 @@ sendEmail(request.params).then(function () {
   throw new Error(error)
 })
 }
+});
+
+Parse.Cloud.define('hello', req => {
+  // Parse.Cloud.run('sendFCMNotification', {
+  //   title: 'Say hi',
+  // })
+  req.log.info(req);
+  return 'Hi';
+});
+
+Parse.Cloud.define('sendFMCNotification', async (req) => {
+  const { title, body, tokens, link } = req.params
+
+  if (!title) throw new Error("Title is required");
+  if (!body) throw new Error("Body is required");
+  if (tokens.length == 0) throw new Error('Tokens are required');
+
+  let message = {
+    notification: {
+      title: title,
+      body: body,
+      click_action: 'https://localhost:8080'
+    }
+  }
+
+  if (link) message.notification.click_action = link
+  try {
+    const { failureCount, successCount } = await admin.messaging().sendToDevice(token, message, {priority: high});
+    console.log('Successfully send the notification to ${successCount} device (${failureCount} failed')
+  }catch (err) {
+    console.log('An error occured while connecting to Firebase')
+  }
 });

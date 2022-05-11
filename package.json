@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.17.1",
+    "firebase-admin": "^10.0.0",
+    "fs": "^0.0.1-security",
     "kerberos": "1.1.4",
     "nodemailer": "^6.7.3",
     "parse": "2.19.0",
