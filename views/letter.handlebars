@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Welcome Email</title>
+  <style>
+    .email-container{
+        height: 100%;
+        width: 100%;
+        background-color: #F5F6F9;
+        padding: 20px 0px;
+        text-align: center;
+	}
+    .header{
+        
+        padding: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #475467;
+    }
+    .content{
+        max-width: 700px;
+        padding: 20px;
+        background-color: white;
+        margin: auto;
+        font-size: 14px;
+        text-align: left;
+        color: #272F40;
+    }
+    .footer{
+        font-size: 10px;
+        color: #98A2B3;
+        padding: 20px;
+    }
+  </style>
+</head>
+<body>
+    <div class="email-container">
+        
+        <div class="header">CHEDRO V NSTP Serial Number</div>
+        <div class="content">
+            <h2>Hello {{name}},</h2>
+            <p>This has reference to your application dated <b>{{dateApplied}}</b>, requesting for issuance of NSTP Serial Number for the following School Year <b>{{schoolYear}}</b>.</p>
+            <p>Per CMO No. 27, s. 2015, herewith is your Serial Number for the following aforementioned school year, to with:</p>
+
+            <h6><b>{{schoolYear}}</b></h6>
+            <p>{{serialNumber}} for {{noOfStudents}} students.</p>
+            <p>Thanks,</p>
+            <p>CHEDRO V</p>
+        </div>
+        <div class="footer">&copy; 2022 CHED Regional Office V</div>
+   
+  </div>
+</body>
+</html>
