@@ -40,12 +40,19 @@ const config = {
   emailAdapter: {
     module: 'parse-smtp-template',
     options: {
+      template: true,
+      templatePath: "views/template.html",
       secure: true,
       port: 465,
       host: 'smtp.gmail.com',
       user: 'chednstpserialnumber@gmail.com',
       password: 'chednstpserialnumber2022',
       fromAddress: 'CHEDRO V NSTP <chednstpserialnumber@gmail.com>',
+      confirmOptions: {
+        subject: "Email Verification",
+        body: "Please Verify your email address for CHED NSTP Serial Number Online Application System",
+        btn: "Confirm Email",
+      }
 	
 	}
   }
