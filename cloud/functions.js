@@ -55,10 +55,18 @@ transporter.use('compile', hbs(handlebarOptions))
 
   if (params.type == "Contact") {
     let info = await transporter.sendMail({
-      from: '"CHEDRO V NSTP" <chednstpserialnumber@gmail.com>', // sender address
-      to: 'lykaccasilao@gmail.com', // list of receivers
-      subject: "Message", // Subject line
-      text: params.message, // plain text body
+      from: '"CHEDRO V NSTP Serial Number" <chednstpserialnumber@gmail.com>', // sender address
+      to: 'ched.help@gmail.com', // list of receivers
+      subject: "NSTP Serial Number Inquiry", // Subject line
+      template: "message",
+      context: {
+        province: params.province,
+        name: params.name,
+        email: params.email,
+        message: params.message
+        
+      },
+    
     });
   }
 
