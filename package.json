@@ -10,10 +10,16 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.17.1",
+<<<<<<< HEAD
     "firebase-admin": "^10.0.0",
     "fs": "^0.0.1-security",
     "kerberos": "1.1.4",
     "nodemailer": "^6.7.3",
+=======
+    "kerberos": "1.1.4",
+    "nodemailer": "^6.7.3",
+    "nodemailer-express-handlebars": "^5.0.0",
+>>>>>>> 75208e989cd7f2526b3f80afcf897c6c782af4b0
     "parse": "2.19.0",
     "parse-server": "4.5.0",
     "parse-smtp-template": "^2.2.0"

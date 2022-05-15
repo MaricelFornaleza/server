@@ -93,7 +93,11 @@ ParseRequest.getData = function() {
   XHR.GET('/parse/classes/GameScore');
 };
 
+<<<<<<< HEAD
  ParseRequest.postCloudCodeData = function() {
+=======
+ParseRequest.postCloudCodeData = function() {
+>>>>>>> 75208e989cd7f2526b3f80afcf897c6c782af4b0
   XHR.setCallback(function(data){
     // close second step
     Steps.closeStep('#step-3');

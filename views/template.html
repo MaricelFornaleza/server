@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Welcome Email</title>
+  <style>
+    .email-container{
+        height: 100%;
+        width: 100%;
+        background-color: #F5F6F9;
+        padding: 20px 0px;
+        text-align: center;
+	}
+    .header{
+        
+        padding: 20px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #475467;
+    }
+    .content{
+        max-width: 700px;
+        padding: 20px;
+        background-color: white;
+        margin: auto;
+        font-size: 14px;
+        text-align: left;
+        color: #272F40;
+    }
+    .footer{
+        font-size: 10px;
+        color: #98A2B3;
+        padding: 20px;
+    }
+    .text-sm{
+        font-size: 12px;
+        line-height: 14px;
+    }
+  </style>
+</head>
+<body>
+    <div class="email-container">
+        
+        <div class="header">CHEDRO V NSTP Serial Number</div>
+        <div class="content">
+            <tr>
+                <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">  ${body}  </h1>
+                <br>
+                <span>To confirm your email address registered to the system, please click the button below.</span>
+                </td>
+               
+              </tr>
+              <tr>
+                <td style="padding: 0 20px 20px;">
+                    <!-- Button : BEGIN -->
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <tr>
+                            <td class="button-td button-td-primary" style="border-radius: 4px; background: #53C1F0;">
+                                 <a class="button-a button-a-primary" href="${link}" style="background: #53C1F0; border: 1px solid #53C1F0; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">${btn}</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Button : END -->
+                </td>
+            </tr>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <tr>
+                    <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #888888;">
+                        <span class="">Please click the link below if the button is not working.</span>
+                        <br>
+                        <span> ${link}  </span>
+
+                        
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">&copy; 2022 CHED Regional Office V</div>
+   
+  </div>
+</body>
+</html>
