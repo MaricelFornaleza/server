@@ -25,7 +25,11 @@ const config = {
   accountLockout: {
     duration: 5,
     threshold: 3,
+<<<<<<< HEAD
     unlockOnPasswordReset: true,
+=======
+    unlockOnPasswordreset: true,
+>>>>>>> e60cb992fd89a53190100e960a561418bd53cf33
   },
   passwordPolicy: {
     doNotAllowUsername: true,
@@ -53,8 +57,8 @@ const config = {
         body: "Please Verify your email address for CHED NSTP Serial Number Online Application System",
         btn: "Confirm Email",
       }
-	
-	}
+
+    }
   }
 
 };

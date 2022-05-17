@@ -12,6 +12,25 @@ Parse.Cloud.beforeSave('Test', () => {
   throw new Parse.Error(9001, 'Saving test objects is not available.');
 });
 
+// transmittal letter
+// import ejs from 'ejs';
+// import htmlPdf from 'html-pdf';
+const ejs = require("ejs");
+const htmlPdf = require("html-pdf");
+ async function htmlToPdfBuffer(pathname, params) {
+  const html = await ejs.renderFile(pathname, params);
+  return new Promise((resolve, reject) => {
+    htmlPdf.create(html).toBuffer((err, buffer) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(buffer);
+      }
+    });
+  });
+}
+// end
+
 const nodemailer = require("nodemailer");
 const hbs = require('nodemailer-express-handlebars')
 const path = require('path')
@@ -84,20 +103,31 @@ transporter.use('compile', hbs(handlebarOptions))
     })
   }
   if (params.type == "Transmittal") {
+    const fileBuffer = await htmlToPdfBuffer("./views/template.ejs", {
+      hei: params.hei,
+      date: params.date,
+      application: params.application,
+      director: "Freddie T. Bernal, PhD., CESO III",
+      
+    });
+   
     let info = await transporter.sendMail({
       from: '"CHED NSTP Serial Number" <chednstpserialnumber@gmail.com>', // sender address
-      to: params.email,
-      subject: "Application Update: " + params.title,
+      to: params.hei.email,
+      subject: "Transmittal Letter",
       template: 'letter',
       context: {
-        name: params.name,
-        dataApplied: params.dataApplied,
-        schoolYear: params.schoolYear,
-        serialNumber: params.serialNumber,
-        noOfStudents: params.noOfStudents
-      }
+        name: params.hei.username,
+        application: params.application
+      },
+      attachments: [{ filename: "Transmittal Letter.pdf", content:fileBuffer
+        
+      }]
+      
     })
-  }
+}
+
+
 
   console.log("Message sent: %s", info.messageId);
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));

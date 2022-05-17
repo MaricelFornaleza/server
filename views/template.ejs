@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>My Table</title>
+    <style>
+        .pdfContainer{
+            padding: 1in;
+            font-size: 12px;
+            
+            
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+     
+        .table{
+            width: 100%;
+           
+        }
+        .logo{
+            width: 10%;
+        }
+      
+
+    </style>
+  </head>
+  <body class="pdfContainer">
+      <table class="table">
+        <tr>
+            <td class="logo"><img src="https://ched8.weebly.com/uploads/6/9/1/2/69126589/5825769_orig.png" alt="" height="80px" ></td>
+            <td style="width: 90% ; ">
+                <table style="width: 100% ; text-align: center;">
+                    <tr><td>Republic of the Philippines</td></tr>
+                <tr><td>Office of the President</td></tr>
+                <tr><td><b>COMMISSION ON HIGHER EDUCATION</b></td></tr>
+                <tr><td>Regional Office V</td></tr>
+
+                </table>
+            </td>
+        </tr>
+      </table>
+      <table style="width: 100%; margin-top: 50px;">
+        <tr style="margin-top: 20px;">
+            <td style="width: 100%; text-align:right;">
+                <%= date %>
+            </td>
+        </tr>
+      </table>
+      <table style="width: 100%; margin-top: 50px;">
+        <tr >
+            <td>
+                <table style="width: 100% ;">
+                    <tr><td> <b>NSTP Coordinator</b> </td></tr>
+                    <tr><td><%= hei.name %></td></tr>
+                    <tr><td><%= hei.address.barangay %>, <%= hei.address.city %></td></tr>
+                    <tr><td><%= hei.address.province %></td></tr>
+                </table>
+            </td>
+        </tr>
+      </table>
+      <table style="width: 100%; margin-top: 75px; line-height: 20px; text-align: justify;">
+        <tr >
+            <td>
+                <table style="width: 100% ; ">
+                    <tr ><td colspan="2">&emsp; &emsp;This has reference to your application dated <%= application.dateApplied %>, requesting for issuance of NSTP Serial Number for the following School Year <%= application.schoolYear %>.</td></tr>
+                   <tr><td style="height: 10px;"></td></tr>
+                    <tr ><td colspan="2">&emsp; &emsp;Per CMO No. 27, s. 2015, herewith is your Serial Number for the following aforementioned School Year, to wit:</td></tr>
+                    <tr><td style="height: 10px;"></td></tr>
+
+                    <tr ><td style="width: 15%;"></td><td style=" width: 80%"><b><%= application.schoolYear %></b></td></tr>
+                    <tr ><td style="width: 15%;"></td> <td style=" width: 80%"><ul><li><%= application.snRange %> for <%= application.students %> students.</li></ul></td> </tr>
+                   <tr><td style="height: 10px;"></td></tr>
+                    
+                    <tr ><td colspan="2">&emsp; &emsp;Thank you.</td></tr>
+                </table>
+            </td>
+        </tr>
+      </table>
+      <table style="width: 100%; margin-top: 100px;">
+        <tr>
+            <td style="width: 50%;"></td>
+            <td style="width: 50%;">
+                <table>
+                    <tr > <td>Very truly yours,</td></tr>
+                    <tr><td style="height: 20px;"></td></tr>
+
+                    <tr> <td style="text-transform: uppercase ;"><b><%= director %></b> </td></tr>
+                    <tr> <td>Director IV</td></tr>
+                </table>
+            </td>
+        </tr>
+
+      </table>
+      
+     
+
+    
+  </body>
+</html>
