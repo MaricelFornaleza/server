@@ -19,13 +19,13 @@ const config = {
   masterKey: process.env.MASTER_KEY || 'masterKey', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/api', // Don't forget to change to https if needed
   liveQuery: {
-    classNames: ['_User', 'Application', 'NstpEnrollment'], // List of classes to support for query subscriptions
+    classNames: ['_User', 'Application', 'NstpEnrollment', 'Notification'], // List of classes to support for query subscriptions
   },
   javascriptKey: "jsKey",
   accountLockout: {
     duration: 5,
     threshold: 3,
-    unlockOnPasswordreset:true,
+    unlockOnPasswordreset: true,
   },
   passwordPolicy: {
     doNotAllowUsername: true,
@@ -53,8 +53,8 @@ const config = {
         body: "Please Verify your email address for CHED NSTP Serial Number Online Application System",
         btn: "Confirm Email",
       }
-	
-	}
+
+    }
   }
 
 };
