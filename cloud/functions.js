@@ -18,6 +18,8 @@ Parse.Cloud.beforeSave('Test', () => {
 // import htmlPdf from 'html-pdf';
 const ejs = require("ejs");
 const htmlPdf = require("html-pdf");
+const fs = require('fs');
+const http = require('http')
  async function htmlToPdfBuffer(pathname, params) {
   const html = await ejs.renderFile(pathname, params);
   return new Promise((resolve, reject) => {
@@ -31,6 +33,7 @@ const htmlPdf = require("html-pdf");
   });
 }
 // end
+
 
 const nodemailer = require("nodemailer");
 const hbs = require('nodemailer-express-handlebars')
