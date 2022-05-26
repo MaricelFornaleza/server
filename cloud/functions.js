@@ -23,7 +23,7 @@ const http = require('http')
  async function htmlToPdfBuffer(pathname, params) {
   const html = await ejs.renderFile(pathname, params);
   return new Promise((resolve, reject) => {
-    htmlPdf.create(html).toBuffer((err, buffer) => {
+    htmlPdf.create(html, {timeout: '100000'}).toBuffer((err, buffer) => {
       if (err) {
         reject(err);
       } else {
@@ -143,7 +143,7 @@ transporter.use('compile', hbs(handlebarOptions))
 const approved = true;
 Parse.Cloud.define("sendEmailNotification", async (request) => {
   if (approved) {
-    sendEmail(request.params).then(function () {
+     sendEmail(request.params).then(function () {
       return 'ok'
     }, (error) => {
       console.log(error)
